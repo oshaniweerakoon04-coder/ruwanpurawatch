@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Experience Ruwanpura Watch in Augmented Reality.">
+
+    <meta name="theme-color"
+          content="#0b0b0b">
+
+    <title>Ruwanpura Watch | AR Experience</title>
+
+
+    <!-- MODEL VIEWER -->
+
+    <script type="module"
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    </script>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+
+            margin: 0;
+            padding: 0;
+
+            width: 100%;
+            min-height: 100%;
+
+        }
+
+
+        body {
+
+            background: #0b0b0b;
+
+            color: white;
+
+            font-family:
+                Inter,
+                Arial,
+                sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .ar-header {
+
+            height: 75px;
+
+            padding: 18px 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            position: relative;
+
+            z-index: 20;
+
+        }
+
+
+        .logo {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .logo span {
+
+            display: block;
+
+            font-size: 9px;
+
+            font-weight: 400;
+
+            letter-spacing: 5px;
+
+            margin-top: 3px;
+
+            opacity: .6;
+
+        }
+
+
+        .back-button {
+
+            color: white;
+
+            text-decoration: none;
+
+            border: 1px solid #444;
+
+            padding: 9px 17px;
+
+            border-radius: 30px;
+
+            font-size: 12px;
+
+            transition: .3s;
+
+        }
+
+
+        .back-button:hover {
+
+            background: white;
+
+            color: black;
+
+        }
+
+
+
+        /* =========================================
+           MAIN
+        ========================================= */
+
+        .ar-page {
+
+            min-height:
+                calc(100vh - 75px);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 10px 15px 20px;
+
+        }
+
+
+
+        /* =========================================
+           INTRO
+        ========================================= */
+
+        .ar-intro {
+
+            max-width: 650px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .eyebrow {
+
+            margin: 0 0 8px;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            font-weight: 600;
+
+            color: #999;
+
+        }
+
+
+        .ar-intro h1 {
+
+            margin: 0 0 8px;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(34px, 6vw, 58px);
+
+            line-height: 1.05;
+
+        }
+
+
+        .ar-intro p {
+
+            margin: 0 auto;
+
+            max-width: 520px;
+
+            color: #999;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+        }
+
+
+
+        /* =========================================
+           MODEL AREA
+        ========================================= */
+
+        .model-container {
+
+            position: relative;
+
+            width: 95%;
+
+            max-width: 1000px;
+
+            height: 62vh;
+
+            min-height: 420px;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    #303030 0%,
+                    #181818 48%,
+                    #0d0d0d 100%
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+        }
+
+
+        model-viewer {
+
+            width: 100%;
+
+            height: 100%;
+
+            background: transparent;
+
+            --poster-color: transparent;
+
+        }
+
+
+
+        /* =========================================
+           AR BUTTON
+        ========================================= */
+
+        #ar-button {
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 20px;
+
+            transform:
+                translateX(-50%);
+
+            padding: 15px 28px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: white;
+
+            color: black;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            white-space: nowrap;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,.45);
+
+            z-index: 10;
+
+        }
+
+
+        #ar-button:active {
+
+            transform:
+                translateX(-50%)
+                scale(.97);
+
+        }
+
+
+
+        /* =========================================
+           LOADING
+        ========================================= */
+
+        #loading {
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            color: #999;
+
+            font-size: 12px;
+
+            z-index: 5;
+
+            pointer-events: none;
+
+        }
+
+
+        .loading-dot {
+
+            width: 8px;
+
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            margin:
+                0 auto 10px;
+
+            animation:
+                pulse 1s infinite alternate;
+
+        }
+
+
+        @keyframes pulse {
+
+            from {
+                opacity: .3;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+
+
+        /* =========================================
+           SIZE INFORMATION
+        ========================================= */
+
+        .size-info {
+
+            margin-top: 12px;
+
+            color: #777;
+
+            font-size: 10px;
+
+            letter-spacing: .5px;
+
+        }
+
+
+        .size-info strong {
+
+            color: #aaa;
+
+        }
+
+
+
+        /* =========================================
+           ERROR
+        ========================================= */
+
+        .error-screen {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            background: #0b0b0b;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            z-index: 100;
+
+        }
+
+
+        .error-box {
+
+            max-width: 450px;
+
+        }
+
+
+        .error-box h2 {
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 38px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .error-box p {
+
+            color: #999;
+
+            line-height: 1.6;
+
+        }
+
+
+        .error-box a {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 12px 22px;
+
+            background: white;
+
+            color: black;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media(max-width:600px) {
+
+            .ar-header {
+
+                height: 65px;
+
+                padding:
+                    15px 18px;
+
+            }
+
+
+            .ar-page {
+
+                min-height:
+                    calc(100vh - 65px);
+
+                padding:
+                    5px 10px 15px;
+
+            }
+
+
+            .ar-intro {
+
+                margin-bottom: 7px;
+
+            }
+
+
+            .ar-intro h1 {
+
+                font-size: 34px;
+
+            }
+
+
+            .ar-intro p {
+
+                font-size: 11px;
+
+                padding:
+                    0 15px;
+
+            }
+
+
+            .model-container {
+
+                width: 97%;
+
+                height: 69vh;
+
+                min-height: 430px;
+
+                border-radius: 18px;
+
+            }
+
+
+            #ar-button {
+
+                bottom: 16px;
+
+                padding:
+                    14px 23px;
+
+                font-size: 13px;
+
+            }
+
+
+            .size-info {
+
+                margin-top: 8px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="ar-header">
+
+
+    <a href="index.html"
+       class="logo">
+
+        RUWANPURA
+
+        <span>WATCH</span>
+
+    </a>
+
+
+    <a href="watches.html"
+       class="back-button">
+
+        ← Collection
+
+    </a>
+
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="ar-page">
+
+
+    <section class="ar-intro">
+
+
+        <p class="eyebrow">
+
+            AUGMENTED REALITY EXPERIENCE
+
+        </p>
+
+
+        <h1 id="watchName">
+
+            Loading...
+
+        </h1>
+
+
+        <p id="watchDescription">
+
+            Preparing your watch experience...
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         3D VIEWER
+    ====================================== -->
+
+    <div class="model-container">
+
+
+        <div id="loading">
+
+            <div class="loading-dot"></div>
+
+            Loading 3D model...
+
+        </div>
+
+
+        <model-viewer
+
+            id="watchModel"
+
+            src=""
+
+            alt="Ruwanpura Watch 3D Model"
+
+            camera-controls
+
+            auto-rotate
+
+            rotation-per-second="12deg"
+
+            shadow-intensity="1"
+
+            shadow-softness="0.8"
+
+            exposure="1"
+
+            environment-image="neutral"
+
+            interaction-prompt="auto"
+
+            ar
+
+            ar-modes="webxr scene-viewer quick-look"
+
+            ar-placement="floor"
+
+            ar-scale="auto"
+
+            scale="1 1 1">
+
+
+            <button
+                id="ar-button"
+                slot="ar-button">
+
+                📱 View in AR
+
+            </button>
+
+
+        </model-viewer>
+
+
+    </div>
+
+
+
+    <div class="size-info">
+
+        Initial AR size:
+        <strong>Maximum 4 × 4 inches</strong>
+
+        · Pinch to resize
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================================
+     ERROR SCREEN
+========================================= -->
+
+<div class="error-screen"
+     id="errorScreen">
+
+
+    <div class="error-box">
+
+
+        <h2>
+
+            Watch Not Found
+
+        </h2>
+
+
+        <p>
+
+            The QR code does not contain
+            a valid Ruwanpura Watch model.
+
+        </p>
+
+
+        <a href="watches.html">
+
+            View Collection
+
+        </a>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+/* =========================================
+   WATCH DATABASE
+========================================= */
+
+const watches = {
+
+
+    eclipse: {
+
+        name:
+            "Ruwanpura Eclipse",
+
+        description:
+            "A bold automatic timepiece with a deep black dial, refined details and a modern character.",
+
+        model:
+            "models/eclipse.glb"
+
+    },
+
+
+    royal: {
+
+        name:
+            "Ruwanpura Royal",
+
+        description:
+            "Inspired by timeless elegance, the Royal combines a polished case with a clean and sophisticated dial.",
+
+        model:
+            "models/royal.glb"
+
+    },
+
+
+    chrono: {
+
+        name:
+            "Ruwanpura Chrono",
+
+        description:
+            "Designed for modern adventures, the Chrono brings a powerful chronograph aesthetic to everyday style.",
+
+        model:
+            "models/chrono.glb"
+
+    }
+
+};
+
+
+
+/* =========================================
+   READ QR PARAMETER
+========================================= */
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const watchID =
+    params.get("watch");
+
+
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const viewer =
+    document.getElementById(
+        "watchModel"
+    );
+
+
+const nameElement =
+    document.getElementById(
+        "watchName"
+    );
+
+
+const descriptionElement =
+    document.getElementById(
+        "watchDescription"
+    );
+
+
+const loading =
+    document.getElementById(
+        "loading"
+    );
+
+
+const errorScreen =
+    document.getElementById(
+        "errorScreen"
+    );
+
+
+
+/* =========================================
+   MAXIMUM AR SIZE
+========================================= */
+
+/*
+   4 inches = 0.1016 metres
+
+   We use this as the maximum
+   horizontal size of the model.
+*/
+
+const MAX_SIZE_METERS =
+    0.1016;
+
+
+
+/* =========================================
+   LOAD SELECTED WATCH
+========================================= */
+
+if (
+    !watchID ||
+    !watches[watchID]
+) {
+
+
+    errorScreen.style.display =
+        "flex";
+
+}
+
+else {
+
+
+    const watch =
+        watches[watchID];
+
+
+    nameElement.textContent =
+        watch.name;
+
+
+    descriptionElement.textContent =
+        watch.description;
+
+
+    document.title =
+        watch.name +
+        " | Ruwanpura Watch";
+
+
+    viewer.src =
+        watch.model;
+
+}
+
+
+
+/* =========================================
+   MODEL LOADED
+========================================= */
+
+viewer.addEventListener(
+    "load",
+    function () {
+
+
+        loading.style.display =
+            "none";
+
+
+        /*
+           Get the real dimensions
+           of the loaded model.
+        */
+
+        const dimensions =
+            viewer.getDimensions();
+
+
+        console.log(
+            "Original model dimensions:",
+            dimensions.x,
+            dimensions.y,
+            dimensions.z
+        );
+
+
+        /*
+           Find the largest horizontal
+           dimension.
+
+           X and Z are used because
+           Y is normally the vertical
+           dimension in the AR scene.
+        */
+
+        const horizontalSize =
+            Math.max(
+                dimensions.x,
+                dimensions.z
+            );
+
+
+        /*
+           Calculate scale factor
+           needed to fit inside
+           4 inches.
+        */
+
+        if (
+            horizontalSize >
+            MAX_SIZE_METERS
+        ) {
+
+
+            const scaleFactor =
+                MAX_SIZE_METERS /
+                horizontalSize;
+
+
+            viewer.scale =
+
+                `${scaleFactor}
+                 ${scaleFactor}
+                 ${scaleFactor}`;
+
+
+            console.log(
+                "AR scale factor:",
+                scaleFactor
+            );
+
+
+        }
+
+        else {
+
+
+            /*
+               Model is already smaller
+               than 4 inches.
+            */
+
+            viewer.scale =
+                "1 1 1";
+
+        }
+
+
+    }
+);
+
+
+
+/* =========================================
+   MODEL ERROR
+========================================= */
+
+viewer.addEventListener(
+    "error",
+    function () {
+
+
+        loading.innerHTML =
+            "Unable to load 3D model.";
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>

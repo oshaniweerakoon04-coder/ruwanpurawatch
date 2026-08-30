@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ruwanpura Watch</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+
+    <!-- MODEL VIEWER -->
+
+    <script type="module"
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    </script>
+
+
+    <!-- QR CODE LIBRARY -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="index.html"
+       class="logo">
+
+        RUWANPURA
+
+        <span>WATCH</span>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="watches.html"
+           class="active">
+            Watches
+        </a>
+
+        <a href="ar.html">
+            Try in AR
+        </a>
+
+        <a href="index.html#about">
+            About
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <a href="cart.html"
+           class="cart-button">
+
+            🛒
+
+            <span class="cart-count"
+                  id="cartCount">
+
+                0
+
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="product-breadcrumb">
+
+    <a href="watches.html">
+        Watches
+    </a>
+
+    <span> / </span>
+
+    <span id="breadcrumbName">
+        Ruwanpura Eclipse
+    </span>
+
+</div>
+
+
+
+<!-- =====================================================
+     PRODUCT
+===================================================== -->
+
+<main class="product-page">
+
+
+    <!-- =================================================
+         LEFT SIDE
+    ================================================== -->
+
+    <section class="product-visual-area">
+
+
+        <!-- MAIN PHOTO -->
+
+        <div class="product-photo-main">
+
+            <img id="mainProductImage"
+                 src="images/eclipse-1.jpg"
+                 alt="Ruwanpura Eclipse">
+
+            <span class="photo-label">
+                PRODUCT VIEW
+            </span>
+
+        </div>
+
+
+        <!-- SECOND PHOTO -->
+
+        <div class="product-photo-secondary">
+
+            <img id="secondProductImage"
+                 src="images/eclipse-2.jpg"
+                 alt="Ruwanpura Eclipse">
+
+            <span class="photo-label">
+                DETAIL VIEW
+            </span>
+
+        </div>
+
+
+        <!-- 3D VIEWER -->
+
+        <div class="product-3d-section">
+
+
+            <div class="viewer-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        INTERACTIVE 3D
+                    </p>
+
+                    <h2>
+                        Explore every detail.
+                    </h2>
+
+                </div>
+
+
+                <span class="viewer-status">
+
+                    ● 3D READY
+
+                </span>
+
+            </div>
+
+
+            <div class="model-container">
+
+
+                <model-viewer
+                    id="productModel"
+
+                    src="models/eclipse.glb"
+
+                    alt="3D model of Ruwanpura Eclipse"
+
+                    camera-controls
+
+                    auto-rotate
+
+                    rotation-per-second="20deg"
+
+                    shadow-intensity="1"
+
+                    exposure="1"
+
+                    environment-image="neutral"
+
+                    interaction-prompt="auto"
+
+                    ar
+
+                    ar-modes="webxr scene-viewer quick-look"
+
+                    ar-placement="floor"
+
+                    ar-scale="auto">
+
+
+                    <!-- AR BUTTON -->
+
+                    <button
+                        slot="ar-button"
+                        class="model-ar-button">
+
+                        📱 View in Your Space
+
+                    </button>
+
+
+                </model-viewer>
+
+
+                <div class="viewer-hint">
+
+                    Drag to rotate · Scroll to zoom
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         RIGHT SIDE
+    ================================================== -->
+
+    <aside class="product-information">
+
+
+        <p class="watch-category"
+           id="productCategory">
+
+            AUTOMATIC
+
+        </p>
+
+
+        <h1 id="productName">
+
+            Ruwanpura Eclipse
+
+        </h1>
+
+
+        <p class="product-tagline"
+           id="productTagline">
+
+            Darkness meets precision.
+
+        </p>
+
+
+        <div class="product-price"
+             id="productPrice">
+
+            LKR 48,500
+
+        </div>
+
+
+        <div class="product-divider"></div>
+
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="product-description">
+
+            <p id="productDescription">
+
+                A bold automatic timepiece with a
+                deep black dial, refined details and
+                a modern character.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- SPECIFICATIONS -->
+
+        <div class="specifications">
+
+
+            <div class="spec-row">
+
+                <span>
+                    Movement
+                </span>
+
+                <strong id="specMovement">
+                    Automatic
+                </strong>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    Case
+                </span>
+
+                <strong id="specCase">
+                    Stainless Steel
+                </strong>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    Glass
+                </span>
+
+                <strong id="specGlass">
+                    Sapphire Crystal
+                </strong>
+
+            </div>
+
+
+            <div class="spec-row">
+
+                <span>
+                    Water Resistance
+                </span>
+
+                <strong id="specWater">
+                    50M
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- AR EXPERIENCE -->
+
+        <div class="ar-product-card">
+
+
+            <div class="ar-icon">
+
+                ✦
+
+            </div>
+
+
+            <div class="ar-product-content">
+
+                <h3>
+
+                    See it on your wrist.
+
+                </h3>
+
+
+                <p>
+
+                    Open the AR experience on your
+                    smartphone and see how this watch
+                    looks in your real environment.
+
+                </p>
+
+
+                <a id="arLink"
+                   href="ar.html?watch=eclipse"
+                   class="ar-main-button">
+
+                    📱 View in AR
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- QR CODE -->
+
+        <div class="qr-section">
+
+
+            <div class="qr-text">
+
+                <p class="eyebrow">
+
+                    MOBILE AR
+
+                </p>
+
+
+                <h3>
+
+                    Scan & Experience
+
+                </h3>
+
+
+                <p>
+
+                    Scan this QR code with your
+                    smartphone camera to open the
+                    AR experience.
+
+                </p>
+
+            </div>
+
+
+            <div id="qrcode"
+                 class="qr-code">
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CART -->
+
+        <button
+            id="addToCartButton"
+            class="add-cart-button">
+
+            Add to Cart
+
+            <span>
+                →
+            </span>
+
+        </button>
+
+
+    </aside>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     AR INFORMATION
+===================================================== -->
+
+<section class="product-ar-explanation">
+
+
+    <div>
+
+        <p class="eyebrow">
+
+            AUGMENTED REALITY
+
+        </p>
+
+
+        <h2>
+
+            From screen
+
+            <span>to reality.</span>
+
+        </h2>
+
+    </div>
+
+
+    <div>
+
+        <p>
+
+            Choose your favourite Ruwanpura watch,
+            tap "View in AR", and place the virtual
+            timepiece into your real environment.
+
+        </p>
+
+
+        <p>
+
+            No application required. Just your
+            smartphone camera and a compatible
+            browser.
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        RUWANPURA
+
+        <span>WATCH</span>
+
+    </div>
+
+
+    <p>
+
+        Time, Reimagined.
+
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="watches.html">
+            Watches
+        </a>
+
+        <a href="ar.html">
+            AR Experience
+        </a>
+
+        <a href="index.html#about">
+            About
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+
+        © 2026 Ruwanpura Watch. Exhibition Concept.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     PRODUCT JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   WATCH DATA
+===================================================== */
+
+
+const watches = {
+
+
+    eclipse: {
+
+        name: "Ruwanpura Eclipse",
+
+        category: "AUTOMATIC",
+
+        price: "LKR 48,500",
+
+        tagline: "Darkness meets precision.",
+
+        description:
+            "A bold automatic timepiece with a deep black dial, refined details and a modern character.",
+
+        model:
+            "models/eclipse.glb",
+
+        image1:
+            "images/eclipse-1.jpg",
+
+        image2:
+            "images/eclipse-2.jpg",
+
+        movement:
+            "Automatic",
+
+        case:
+            "Stainless Steel",
+
+        glass:
+            "Sapphire Crystal",
+
+        water:
+            "50M"
+
+    },
+
+
+    royal: {
+
+        name: "Ruwanpura Royal",
+
+        category: "CLASSIC",
+
+        price: "LKR 56,900",
+
+        tagline: "Timeless elegance, redefined.",
+
+        description:
+            "Inspired by timeless elegance, the Royal combines a polished case with a clean and sophisticated dial.",
+
+        model:
+            "models/royal.glb",
+
+        image1:
+            "images/royal-1.jpg",
+
+        image2:
+            "images/royal-2.jpg",
+
+        movement:
+            "Quartz",
+
+        case:
+            "Stainless Steel",
+
+        glass:
+            "Sapphire Crystal",
+
+        water:
+            "50M"
+
+    },
+
+
+    chrono: {
+
+        name: "Ruwanpura Chrono",
+
+        category: "CHRONOGRAPH",
+
+        price: "LKR 62,500",
+
+        tagline: "Built for modern adventures.",
+
+        description:
+            "Designed for modern adventures, the Chrono brings a powerful chronograph aesthetic to everyday style.",
+
+        model:
+            "models/chrono.glb",
+
+        image1:
+            "images/chrono-1.jpg",
+
+        image2:
+            "images/chrono-2.jpg",
+
+        movement:
+            "Chronograph",
+
+        case:
+            "Stainless Steel",
+
+        glass:
+            "Mineral Crystal",
+
+        water:
+            "100M"
+
+    }
+
+
+};
+
+
+
+/* =====================================================
+   GET WATCH FROM URL
+===================================================== */
+
+
+const urlParams =
+    new URLSearchParams(window.location.search);
+
+
+let watchID =
+    urlParams.get("id");
+
+
+if (!watchID || !watches[watchID]) {
+
+    watchID = "eclipse";
+
+}
+
+
+const watch =
+    watches[watchID];
+
+
+
+/* =====================================================
+   LOAD PRODUCT
+===================================================== */
+
+
+document.title =
+    watch.name + " | Ruwanpura Watch";
+
+
+document.getElementById("breadcrumbName")
+    .textContent =
+    watch.name;
+
+
+document.getElementById("productName")
+    .textContent =
+    watch.name;
+
+
+document.getElementById("productCategory")
+    .textContent =
+    watch.category;
+
+
+document.getElementById("productPrice")
+    .textContent =
+    watch.price;
+
+
+document.getElementById("productTagline")
+    .textContent =
+    watch.tagline;
+
+
+document.getElementById("productDescription")
+    .textContent =
+    watch.description;
+
+
+document.getElementById("specMovement")
+    .textContent =
+    watch.movement;
+
+
+document.getElementById("specCase")
+    .textContent =
+    watch.case;
+
+
+document.getElementById("specGlass")
+    .textContent =
+    watch.glass;
+
+
+document.getElementById("specWater")
+    .textContent =
+    watch.water;
+
+
+
+/* =====================================================
+   LOAD IMAGES
+===================================================== */
+
+
+document.getElementById("mainProductImage")
+    .src =
+    watch.image1;
+
+
+document.getElementById("secondProductImage")
+    .src =
+    watch.image2;
+
+
+
+/* =====================================================
+   LOAD GLB MODEL
+===================================================== */
+
+
+const modelViewer =
+    document.getElementById("productModel");
+
+
+modelViewer.src =
+    watch.model;
+
+
+modelViewer.alt =
+    "3D model of " + watch.name;
+
+
+
+/* =====================================================
+   AR LINK
+===================================================== */
+
+
+const arLink =
+    document.getElementById("arLink");
+
+
+arLink.href =
+    "ar.html?watch=" + watchID;
+
+
+
+/* =====================================================
+   GENERATE QR CODE
+===================================================== */
+
+
+const qrContainer =
+    document.getElementById("qrcode");
+
+
+/*
+   IMPORTANT:
+
+   When your exhibition server is running,
+   replace this automatically generated URL
+   with the IP address of your computer.
+
+   Example:
+
+   http://192.168.1.10:8000/ar.html?watch=eclipse
+*/
+
+
+const arURL =
+    window.location.origin +
+    "/ar.html?watch=" +
+    watchID;
+
+
+new QRCode(qrContainer, {
+
+    text: arURL,
+
+    width: 150,
+
+    height: 150,
+
+    colorDark: "#000000",
+
+    colorLight: "#ffffff",
+
+    correctLevel:
+        QRCode.CorrectLevel.H
+
+});
+
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+
+const addButton =
+    document.getElementById("addToCartButton");
+
+
+addButton.addEventListener("click", function () {
+
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem("ruwanpuraCart")
+        ) || [];
+
+
+    cart.push({
+
+        id: watchID,
+
+        name: watch.name,
+
+        price: watch.price
+
+    });
+
+
+    localStorage.setItem(
+        "ruwanpuraCart",
+        JSON.stringify(cart)
+    );
+
+
+    updateCartCount();
+
+
+    addButton.innerHTML =
+        "✓ Added to Cart";
+
+
+    setTimeout(() => {
+
+        addButton.innerHTML =
+            'Add to Cart <span>→</span>';
+
+    }, 1800);
+
+
+});
+
+
+
+/* =====================================================
+   CART COUNT
+===================================================== */
+
+
+function updateCartCount() {
+
+
+    const cart =
+        JSON.parse(
+            localStorage.getItem("ruwanpuraCart")
+        ) || [];
+
+
+    const count =
+        document.getElementById("cartCount");
+
+
+    if (count) {
+
+        count.textContent =
+            cart.length;
+
+    }
+
+}
+
+
+updateCartCount();
+
+
+</script>
+
+
+</body>
+
+</html>

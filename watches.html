@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Explore the Ruwanpura Watch collection and experience each watch in 3D and Augmented Reality.">
+
+    <title>Watches | Ruwanpura Watch</title>
+
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- MODEL VIEWER -->
+
+    <script type="module"
+            src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    </script>
+
+
+    <style>
+
+
+        /* =====================================================
+           REAL 3D WATCH PREVIEW
+        ===================================================== */
+
+        .collection-watch-model {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 400px;
+
+            display: block;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #303030 0%,
+                    #181818 55%,
+                    #0d0d0d 100%
+                );
+
+            --poster-color: transparent;
+
+        }
+
+
+        .collection-product-image {
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .collection-watch-model::part(default-progress-bar) {
+
+            display: none;
+
+        }
+
+
+        /* =====================================================
+           AR READY LABEL
+        ===================================================== */
+
+        .product-ar {
+
+            position: absolute;
+
+            top: 20px;
+
+            right: 20px;
+
+            z-index: 5;
+
+            padding: 7px 12px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(0,0,0,0.65);
+
+            backdrop-filter:
+                blur(8px);
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            color: #ffffff;
+
+        }
+
+
+        /* =====================================================
+           PRODUCT NUMBER
+        ===================================================== */
+
+        .product-number {
+
+            position: absolute;
+
+            top: 20px;
+
+            left: 20px;
+
+            z-index: 5;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            color: rgba(255,255,255,0.6);
+
+        }
+
+
+        /* =====================================================
+           3D MODEL LINK
+        ===================================================== */
+
+        .watch-product-link {
+
+            display: block;
+
+            width: 100%;
+
+            height: 100%;
+
+            text-decoration: none;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .collection-watch-model {
+
+                min-height: 320px;
+
+            }
+
+            .product-ar {
+
+                top: 12px;
+
+                right: 12px;
+
+                font-size: 8px;
+
+            }
+
+            .product-number {
+
+                top: 12px;
+
+                left: 12px;
+
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+
+    <a href="index.html"
+       class="logo">
+
+        RUWANPURA
+
+        <span>WATCH</span>
+
+    </a>
+
+
+
+    <nav class="nav-links">
+
+
+        <a href="index.html">
+            Home
+        </a>
+
+
+        <a href="watches.html"
+           class="active">
+
+            Watches
+
+        </a>
+
+
+        <a href="ar.html">
+
+            Try in AR
+
+        </a>
+
+
+        <a href="index.html#about">
+
+            About
+
+        </a>
+
+
+    </nav>
+
+
+
+    <div class="nav-actions">
+
+
+        <a href="cart.html"
+           class="cart-button">
+
+            🛒
+
+            <span class="cart-count"
+                  id="cartCount">
+
+                0
+
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     PAGE HERO
+===================================================== -->
+
+<section class="collection-page-hero">
+
+
+    <p class="eyebrow">
+
+        RUWANPURA COLLECTION
+
+    </p>
+
+
+    <h1>
+
+        Watches made
+
+        <span>to be seen.</span>
+
+    </h1>
+
+
+    <p>
+
+        Explore our collection in 3D and
+        experience your favourite watch
+        in your own space using Augmented Reality.
+
+    </p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FILTER
+===================================================== -->
+
+<section class="collection-controls">
+
+
+    <div class="collection-count">
+
+        03 WATCHES
+
+    </div>
+
+
+    <div class="filter-buttons">
+
+
+        <button class="filter-button active"
+                data-filter="all">
+
+            All
+
+        </button>
+
+
+        <button class="filter-button"
+                data-filter="automatic">
+
+            Automatic
+
+        </button>
+
+
+        <button class="filter-button"
+                data-filter="classic">
+
+            Classic
+
+        </button>
+
+
+        <button class="filter-button"
+                data-filter="chronograph">
+
+            Chronograph
+
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     WATCH COLLECTION
+===================================================== -->
+
+<main class="full-collection">
+
+
+
+    <!-- =================================================
+         WATCH 01
+    ================================================== -->
+
+    <article class="collection-product"
+             data-category="automatic">
+
+
+        <div class="collection-product-image">
+
+
+            <span class="product-number">
+
+                01
+
+            </span>
+
+
+            <span class="product-ar">
+
+                ● AR READY
+
+            </span>
+
+
+
+            <a href="product.html?id=eclipse"
+               class="watch-product-link">
+
+
+                <model-viewer
+
+                    class="collection-watch-model"
+
+                    src="models/eclipse.glb"
+
+                    alt="Ruwanpura Eclipse 3D watch"
+
+                    camera-controls
+
+                    auto-rotate
+
+                    rotation-per-second="12deg"
+
+                    shadow-intensity="1"
+
+                    shadow-softness="0.8"
+
+                    exposure="1"
+
+                    environment-image="neutral"
+
+                    interaction-prompt="auto"
+
+                    loading="lazy">
+
+                </model-viewer>
+
+
+            </a>
+
+
+        </div>
+
+
+
+        <div class="collection-product-info">
+
+
+            <p class="watch-category">
+
+                AUTOMATIC
+
+            </p>
+
+
+            <a href="product.html?id=eclipse"
+               class="product-title-link">
+
+
+                <h2>
+
+                    Ruwanpura Eclipse
+
+                </h2>
+
+
+            </a>
+
+
+            <p class="collection-description">
+
+                A bold automatic timepiece with a
+                deep black dial, refined details and
+                a modern character.
+
+            </p>
+
+
+            <div class="product-meta">
+
+
+                <strong>
+
+                    LKR 48,500
+
+                </strong>
+
+
+                <span>
+
+                    Automatic Movement
+
+                </span>
+
+
+            </div>
+
+
+            <div class="product-actions">
+
+
+                <a href="product.html?id=eclipse"
+                   class="button button-primary">
+
+                    Explore Watch →
+
+                </a>
+
+
+                <a href="ar.html?watch=eclipse"
+                   class="button button-outline">
+
+                    📱 Try in AR
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </article>
+
+
+
+    <!-- =================================================
+         WATCH 02
+    ================================================== -->
+
+    <article class="collection-product reverse"
+             data-category="classic">
+
+
+        <div class="collection-product-image">
+
+
+            <span class="product-number">
+
+                02
+
+            </span>
+
+
+            <span class="product-ar">
+
+                ● AR READY
+
+            </span>
+
+
+
+            <a href="product.html?id=royal"
+               class="watch-product-link">
+
+
+                <model-viewer
+
+                    class="collection-watch-model"
+
+                    src="models/royal.glb"
+
+                    alt="Ruwanpura Royal 3D watch"
+
+                    camera-controls
+
+                    auto-rotate
+
+                    rotation-per-second="12deg"
+
+                    shadow-intensity="1"
+
+                    shadow-softness="0.8"
+
+                    exposure="1"
+
+                    environment-image="neutral"
+
+                    interaction-prompt="auto"
+
+                    loading="lazy">
+
+                </model-viewer>
+
+
+            </a>
+
+
+        </div>
+
+
+
+        <div class="collection-product-info">
+
+
+            <p class="watch-category">
+
+                CLASSIC
+
+            </p>
+
+
+            <a href="product.html?id=royal"
+               class="product-title-link">
+
+
+                <h2>
+
+                    Ruwanpura Royal
+
+                </h2>
+
+
+            </a>
+
+
+            <p class="collection-description">
+
+                Inspired by timeless elegance, the
+                Royal combines a polished case with
+                a clean and sophisticated dial.
+
+            </p>
+
+
+            <div class="product-meta">
+
+
+                <strong>
+
+                    LKR 56,900
+
+                </strong>
+
+
+                <span>
+
+                    Classic Collection
+
+                </span>
+
+
+            </div>
+
+
+            <div class="product-actions">
+
+
+                <a href="product.html?id=royal"
+                   class="button button-primary">
+
+                    Explore Watch →
+
+                </a>
+
+
+                <a href="ar.html?watch=royal"
+                   class="button button-outline">
+
+                    📱 Try in AR
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </article>
+
+
+
+    <!-- =================================================
+         WATCH 03
+    ================================================== -->
+
+    <article class="collection-product"
+             data-category="chronograph">
+
+
+        <div class="collection-product-image">
+
+
+            <span class="product-number">
+
+                03
+
+            </span>
+
+
+            <span class="product-ar">
+
+                ● AR READY
+
+            </span>
+
+
+
+            <a href="product.html?id=chrono"
+               class="watch-product-link">
+
+
+                <model-viewer
+
+                    class="collection-watch-model"
+
+                    src="models/chrono.glb"
+
+                    alt="Ruwanpura Chrono 3D watch"
+
+                    camera-controls
+
+                    auto-rotate
+
+                    rotation-per-second="12deg"
+
+                    shadow-intensity="1"
+
+                    shadow-softness="0.8"
+
+                    exposure="1"
+
+                    environment-image="neutral"
+
+                    interaction-prompt="auto"
+
+                    loading="lazy">
+
+                </model-viewer>
+
+
+            </a>
+
+
+        </div>
+
+
+
+        <div class="collection-product-info">
+
+
+            <p class="watch-category">
+
+                CHRONOGRAPH
+
+            </p>
+
+
+            <a href="product.html?id=chrono"
+               class="product-title-link">
+
+
+                <h2>
+
+                    Ruwanpura Chrono
+
+                </h2>
+
+
+            </a>
+
+
+            <p class="collection-description">
+
+                Designed for modern adventures,
+                the Chrono brings a powerful
+                chronograph aesthetic to everyday style.
+
+            </p>
+
+
+            <div class="product-meta">
+
+
+                <strong>
+
+                    LKR 62,500
+
+                </strong>
+
+
+                <span>
+
+                    Chronograph
+
+                </span>
+
+
+            </div>
+
+
+            <div class="product-actions">
+
+
+                <a href="product.html?id=chrono"
+                   class="button button-primary">
+
+                    Explore Watch →
+
+                </a>
+
+
+                <a href="ar.html?watch=chrono"
+                   class="button button-outline">
+
+                    📱 Try in AR
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </article>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     AR EXPERIENCE BANNER
+===================================================== -->
+
+<section class="collection-ar-banner">
+
+
+    <div>
+
+
+        <p class="eyebrow">
+
+            THE RUWANPURA AR EXPERIENCE
+
+        </p>
+
+
+        <h2>
+
+            Don't just choose it.
+
+            <span>See it.</span>
+
+        </h2>
+
+
+        <p>
+
+            Use your smartphone camera to
+            experience selected Ruwanpura watches
+            in your real environment.
+
+        </p>
+
+
+    </div>
+
+
+    <a href="ar.html?watch=eclipse"
+       class="button button-light">
+
+        Start AR Experience →
+
+    </a>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        RUWANPURA
+
+        <span>WATCH</span>
+
+    </div>
+
+
+    <p>
+
+        Time, Reimagined.
+
+    </p>
+
+
+    <div class="footer-links">
+
+
+        <a href="index.html">
+
+            Home
+
+        </a>
+
+
+        <a href="watches.html">
+
+            Watches
+
+        </a>
+
+
+        <a href="ar.html">
+
+            AR Experience
+
+        </a>
+
+
+        <a href="index.html#about">
+
+            About
+
+        </a>
+
+
+    </div>
+
+
+    <p class="copyright">
+
+        © 2026 Ruwanpura Watch. Exhibition Concept.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   FILTER SYSTEM
+===================================================== */
+
+
+const filterButtons =
+    document.querySelectorAll(
+        ".filter-button"
+    );
+
+
+const products =
+    document.querySelectorAll(
+        ".collection-product"
+    );
+
+
+filterButtons.forEach(button => {
+
+
+    button.addEventListener(
+        "click",
+        () => {
+
+
+            /* Remove active state */
+
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            /* Add active state */
+
+            button.classList.add(
+                "active"
+            );
+
+
+            /* Get selected category */
+
+            const filter =
+                button.dataset.filter;
+
+
+
+            /* Filter products */
+
+            products.forEach(product => {
+
+
+                if (
+                    filter === "all" ||
+                    product.dataset.category === filter
+                ) {
+
+
+                    product.style.display =
+                        "grid";
+
+
+                }
+
+                else {
+
+
+                    product.style.display =
+                        "none";
+
+
+                }
+
+
+            });
+
+
+        }
+    );
+
+
+});
+
+
+
+/* =====================================================
+   CART COUNT
+===================================================== */
+
+
+function updateCartCount() {
+
+
+    const cart =
+
+        JSON.parse(
+            localStorage.getItem(
+                "ruwanpuraCart"
+            )
+        ) || [];
+
+
+
+    const cartCount =
+        document.getElementById(
+            "cartCount"
+        );
+
+
+    if (cartCount) {
+
+        cartCount.textContent =
+            cart.length;
+
+    }
+
+
+}
+
+
+updateCartCount();
+
+
+
+/* =====================================================
+   PREVENT MODEL LINK FROM
+   BLOCKING MODEL INTERACTION
+===================================================== */
+
+
+document
+    .querySelectorAll(
+        ".watch-product-link model-viewer"
+    )
+    .forEach(model => {
+
+
+        model.addEventListener(
+            "pointerdown",
+            event => {
+
+                event.stopPropagation();
+
+            }
+        );
+
+
+    });
+
+
+</script>
+
+
+
+</body>
+
+</html>
