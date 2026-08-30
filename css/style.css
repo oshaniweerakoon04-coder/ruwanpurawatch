@@ -1,0 +1,2704 @@
+/* =========================================
+   RUWANPURA WATCH
+   MODERN LUXURY WATCH WEBSITE
+========================================= */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #0b0b0b;
+    color: #f5f5f5;
+
+    font-family: "Inter", sans-serif;
+
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+
+.navbar {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    border-bottom: 1px solid #242424;
+
+    background: rgba(11, 11, 11, 0.94);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(15px);
+}
+
+
+.logo {
+    font-family: "Playfair Display", serif;
+
+    font-size: 21px;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
+}
+
+
+.logo span {
+    display: block;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+    text-align: center;
+
+    margin-top: -5px;
+
+    color: #999;
+}
+
+
+.nav-links {
+    display: flex;
+
+    gap: 38px;
+}
+
+
+.nav-links a {
+    font-size: 13px;
+
+    color: #aaa;
+
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: white;
+}
+
+
+.nav-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.search-button {
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+.cart-button {
+    position: relative;
+
+    font-size: 18px;
+}
+
+
+.cart-count {
+    position: absolute;
+
+    top: -10px;
+
+    right: -12px;
+
+    width: 17px;
+
+    height: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    color: black;
+
+    border-radius: 50%;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+
+.hero {
+    min-height: 680px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 80px 8%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            #303030 0%,
+            #151515 30%,
+            #0b0b0b 65%
+        );
+}
+
+
+.hero-content {
+    width: 50%;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.eyebrow {
+    color: #999;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.98;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+}
+
+
+.hero h1 span {
+    color: #999;
+}
+
+
+.hero-description {
+    max-width: 490px;
+
+    margin-top: 30px;
+
+    color: #999;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 35px;
+}
+
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.button-primary {
+    background: white;
+
+    color: black;
+}
+
+
+.button-primary:hover {
+    transform: translateY(-3px);
+
+    background: #ddd;
+}
+
+
+.button-outline {
+    border: 1px solid #555;
+
+    color: white;
+}
+
+
+.button-outline:hover {
+    border-color: white;
+}
+
+
+.hero-watch {
+    width: 45%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+}
+
+
+.watch-placeholder {
+    width: 300px;
+
+    height: 450px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.watch-face {
+    width: 230px;
+
+    height: 230px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #555,
+            #222 50%,
+            #080808 100%
+        );
+
+    border: 8px solid #666;
+
+    box-shadow:
+        0 0 0 4px #222,
+        0 30px 60px rgba(0,0,0,0.8);
+
+    position: relative;
+}
+
+
+.watch-face::before,
+.watch-face::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 65px;
+
+    height: 150px;
+
+    background: linear-gradient(
+        #111,
+        #333
+    );
+
+    z-index: -1;
+}
+
+
+.watch-face::before {
+    top: -150px;
+}
+
+
+.watch-face::after {
+    bottom: -150px;
+}
+
+
+.watch-hand {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 50%;
+
+    transform-origin: bottom center;
+
+    background: white;
+
+    border-radius: 5px;
+}
+
+
+.watch-hand.hour {
+    width: 5px;
+
+    height: 55px;
+
+    transform: translateX(-50%) rotate(35deg);
+}
+
+
+.watch-hand.minute {
+    width: 3px;
+
+    height: 75px;
+
+    transform: translateX(-50%) rotate(125deg);
+}
+
+
+.watch-center {
+    position: absolute;
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+.watch-12,
+.watch-3,
+.watch-6,
+.watch-9 {
+    position: absolute;
+
+    font-size: 13px;
+
+    color: #ddd;
+
+    font-weight: 600;
+}
+
+
+.watch-12 {
+    top: 12px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+.watch-3 {
+    right: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+.watch-6 {
+    bottom: 12px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+.watch-9 {
+    left: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+.hero-glow {
+    width: 400px;
+
+    height: 400px;
+
+    position: absolute;
+
+    background: #777;
+
+    filter: blur(150px);
+
+    opacity: 0.12;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+
+.features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top: 1px solid #252525;
+
+    border-bottom: 1px solid #252525;
+}
+
+
+.feature {
+    padding: 25px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-right: 1px solid #252525;
+}
+
+
+.feature:last-child {
+    border-right: none;
+}
+
+
+.feature-icon {
+    font-size: 25px;
+
+    color: #888;
+}
+
+
+.feature strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+
+.feature p {
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   COLLECTION
+========================================= */
+
+
+.collection {
+    padding: 110px 8%;
+}
+
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 50px;
+}
+
+
+.section-heading h2,
+.ar-content h2,
+.about h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+
+.section-heading h2 span,
+.about h2 span {
+    color: #777;
+}
+
+
+.view-all {
+    font-size: 12px;
+
+    color: #aaa;
+
+    border-bottom: 1px solid #555;
+
+    padding-bottom: 5px;
+}
+
+
+.watch-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.watch-card {
+    background: #141414;
+
+    border: 1px solid #242424;
+
+    padding: 12px;
+
+    transition: 0.4s;
+}
+
+
+.watch-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #444;
+}
+
+
+.watch-image {
+    height: 430px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #383838,
+            #171717 65%
+        );
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.silver-watch {
+    background:
+        radial-gradient(
+            circle at center,
+            #555,
+            #202020 65%
+        );
+}
+
+
+.bronze-watch {
+    background:
+        radial-gradient(
+            circle at center,
+            #51483f,
+            #181716 65%
+        );
+}
+
+
+.collection-number {
+    position: absolute;
+
+    top: 20px;
+
+    left: 20px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.ar-badge {
+    position: absolute;
+
+    top: 20px;
+
+    right: 20px;
+
+    padding: 6px 10px;
+
+    border: 1px solid #555;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: #ccc;
+}
+
+
+.watch-placeholder.small {
+    height: 330px;
+
+    width: 230px;
+}
+
+
+.watch-placeholder.small .watch-face {
+    width: 170px;
+
+    height: 170px;
+
+    border-width: 6px;
+}
+
+
+.watch-face.silver {
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #eee,
+            #777 55%,
+            #333
+        );
+
+    border-color: #aaa;
+}
+
+
+.watch-face.bronze {
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #8a7560,
+            #40372e 55%,
+            #181512
+        );
+
+    border-color: #8d7966;
+}
+
+
+.watch-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    padding: 22px 8px 0;
+}
+
+
+.watch-category {
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.watch-info h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    margin-top: 4px;
+}
+
+
+.price {
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+.watch-description {
+    color: #777;
+
+    font-size: 12px;
+
+    padding: 12px 8px 20px;
+}
+
+
+.card-button {
+    display: block;
+
+    border-top: 1px solid #292929;
+
+    padding: 15px 8px;
+
+    font-size: 11px;
+
+    color: #bbb;
+
+    transition: 0.3s;
+}
+
+
+.card-button:hover {
+    color: white;
+
+    padding-left: 14px;
+}
+
+
+/* =========================================
+   AR SECTION
+========================================= */
+
+
+.ar-section {
+    min-height: 600px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #202020,
+            #090909
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 80px 10%;
+
+    overflow: hidden;
+}
+
+
+.ar-content {
+    max-width: 550px;
+}
+
+
+.ar-content h2 {
+    margin-bottom: 25px;
+}
+
+
+.ar-content > p {
+    color: #999;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    max-width: 480px;
+}
+
+
+.ar-steps {
+    display: flex;
+
+    gap: 30px;
+
+    margin: 40px 0;
+}
+
+
+.ar-step {
+    max-width: 140px;
+}
+
+
+.ar-step span {
+    display: block;
+
+    color: #777;
+
+    font-size: 10px;
+
+    margin-bottom: 10px;
+}
+
+
+.ar-step strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+
+.ar-step small {
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+.button-light {
+    background: white;
+
+    color: black;
+}
+
+
+.ar-visual {
+    width: 40%;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.phone {
+    width: 260px;
+
+    height: 510px;
+
+    border: 7px solid #333;
+
+    border-radius: 38px;
+
+    background: #080808;
+
+    padding: 10px;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+
+    transform: rotate(5deg);
+}
+
+
+.phone-screen {
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle,
+            #353535,
+            #111
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.ar-watch-placeholder {
+    transform: scale(0.7);
+}
+
+
+.ar-label {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border: 1px solid #555;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+
+.about {
+    display: grid;
+
+    grid-template-columns: 35% 65%;
+
+    padding: 120px 10%;
+
+    border-bottom: 1px solid #252525;
+}
+
+
+.about-number {
+    font-family: "Playfair Display", serif;
+
+    font-size: 150px;
+
+    color: #222;
+
+    font-weight: 700;
+}
+
+
+.about-content {
+    max-width: 650px;
+}
+
+
+.about-content h2 {
+    margin-bottom: 30px;
+}
+
+
+.about-content > p:last-child {
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+
+footer {
+    padding: 60px 8%;
+
+    text-align: center;
+
+    color: #777;
+}
+
+
+.footer-logo {
+    font-family: "Playfair Display", serif;
+
+    color: white;
+
+    letter-spacing: 3px;
+
+    font-size: 20px;
+}
+
+
+.footer-logo span {
+    font-family: "Inter", sans-serif;
+
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+}
+
+
+footer > p {
+    margin: 10px 0 25px;
+
+    font-size: 11px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+.footer-links a {
+    font-size: 11px;
+
+    color: #777;
+}
+
+
+.footer-links a:hover {
+    color: white;
+}
+
+
+.copyright {
+    border-top: 1px solid #222;
+
+    padding-top: 25px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 60px;
+    }
+
+
+    .hero-content {
+        width: 100%;
+    }
+
+
+    .hero-description {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+
+    .hero-watch {
+        width: 100%;
+
+        margin-top: 40px;
+    }
+
+
+    .features {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .feature:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .watch-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .ar-section {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .ar-content {
+        max-width: 650px;
+    }
+
+
+    .ar-steps {
+        justify-content: center;
+    }
+
+
+    .ar-visual {
+        width: 100%;
+
+        margin-top: 60px;
+    }
+
+
+    .about {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .about-number {
+        display: none;
+    }
+
+
+    .about-content {
+        margin: auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+
+        height: 70px;
+    }
+
+
+    .logo {
+        font-size: 18px;
+    }
+
+
+    .hero {
+        min-height: auto;
+
+        padding: 70px 6%;
+    }
+
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .button {
+        width: 100%;
+    }
+
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+
+    .feature {
+        border-right: none;
+
+        border-bottom: 1px solid #252525;
+    }
+
+
+    .collection {
+        padding: 80px 6%;
+    }
+
+
+    .section-heading {
+        display: block;
+    }
+
+
+    .view-all {
+        display: inline-block;
+
+        margin-top: 20px;
+    }
+
+
+    .watch-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .watch-image {
+        height: 400px;
+    }
+
+
+    .ar-section {
+        padding: 80px 6%;
+    }
+
+
+    .ar-steps {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .ar-step {
+        max-width: 220px;
+    }
+
+
+    .about {
+        padding: 80px 6%;
+    }
+
+}
+
+/* =========================================
+   COLLECTION PAGE
+========================================= */
+
+
+.collection-page-hero {
+
+    text-align: center;
+
+    padding: 110px 20px 90px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #252525,
+            #0b0b0b 65%
+        );
+
+    border-bottom: 1px solid #252525;
+}
+
+
+.collection-page-hero h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 7vw, 85px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+
+.collection-page-hero h1 span {
+
+    color: #777;
+}
+
+
+.collection-page-hero > p:last-child {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FILTER
+========================================= */
+
+
+.collection-controls {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 35px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #252525;
+}
+
+
+.collection-count {
+
+    color: #666;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.filter-buttons {
+
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.filter-button {
+
+    padding: 9px 17px;
+
+    border: 1px solid #333;
+
+    background: transparent;
+
+    color: #888;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.filter-button:hover {
+
+    color: white;
+
+    border-color: #666;
+}
+
+
+.filter-button.active {
+
+    background: white;
+
+    color: black;
+
+    border-color: white;
+}
+
+
+/* =========================================
+   FULL COLLECTION
+========================================= */
+
+
+.full-collection {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 60px 30px 100px;
+}
+
+
+.collection-product {
+
+    display: grid;
+
+    grid-template-columns: 55% 45%;
+
+    min-height: 580px;
+
+    margin-bottom: 30px;
+
+    background: #141414;
+
+    border: 1px solid #242424;
+
+    overflow: hidden;
+}
+
+
+.collection-product.reverse {
+
+    grid-template-columns: 45% 55%;
+}
+
+
+.collection-product.reverse
+.collection-product-image {
+
+    order: 2;
+}
+
+
+.collection-product-image {
+
+    min-height: 580px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #373737,
+            #151515 65%
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.collection-product-image.silver-watch {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #505050,
+            #181818 65%
+        );
+}
+
+
+.collection-product-image.bronze-watch {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #51483f,
+            #171615 65%
+        );
+}
+
+
+.product-number {
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 25px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.product-ar {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 25px;
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+.collection-watch {
+
+    width: 300px;
+
+    height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.collection-watch .watch-face {
+
+    width: 250px;
+
+    height: 250px;
+}
+
+
+.collection-product-info {
+
+    padding: 80px 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.collection-product-info h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(35px, 4vw, 55px);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    margin: 5px 0 25px;
+}
+
+
+.collection-description {
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    max-width: 430px;
+
+    margin-bottom: 35px;
+}
+
+
+.product-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.product-meta strong {
+
+    font-size: 14px;
+}
+
+
+.product-meta span {
+
+    color: #666;
+
+    font-size: 10px;
+}
+
+
+.product-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+.product-actions .button {
+
+    width: auto;
+}
+
+
+/* =========================================
+   AR BANNER
+========================================= */
+
+
+.collection-ar-banner {
+
+    margin: 0;
+
+    padding: 90px 10%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #242424,
+            #0b0b0b
+        );
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 50px;
+
+    border-top: 1px solid #252525;
+
+    border-bottom: 1px solid #252525;
+}
+
+
+.collection-ar-banner h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+
+.collection-ar-banner h2 span {
+
+    color: #777;
+}
+
+
+.collection-ar-banner > div > p:last-child {
+
+    color: #888;
+
+    font-size: 13px;
+
+    max-width: 500px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+
+@media (max-width: 800px) {
+
+
+    .collection-controls {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    .filter-buttons {
+
+        flex-wrap: wrap;
+    }
+
+
+    .collection-product,
+
+    .collection-product.reverse {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .collection-product.reverse
+    .collection-product-image {
+
+        order: 0;
+    }
+
+
+    .collection-product-image {
+
+        min-height: 450px;
+    }
+
+
+    .collection-product-info {
+
+        padding: 50px 30px;
+    }
+
+
+    .collection-ar-banner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 70px 8%;
+    }
+
+
+}
+
+
+@media (max-width: 500px) {
+
+
+    .collection-page-hero {
+
+        padding: 80px 20px 60px;
+    }
+
+
+    .collection-page-hero h1 {
+
+        font-size: 48px;
+    }
+
+
+    .full-collection {
+
+        padding: 30px 15px 70px;
+    }
+
+
+    .collection-product-info {
+
+        padding: 40px 22px;
+    }
+
+
+    .product-actions {
+
+        flex-direction: column;
+    }
+
+
+    .product-actions .button {
+
+        width: 100%;
+    }
+
+
+}
+
+/* =========================================================
+   PRODUCT PAGE
+========================================================= */
+
+.product-breadcrumb {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 25px 40px;
+
+    color: #666;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+.product-breadcrumb a {
+
+    color: #aaa;
+
+    text-decoration: none;
+}
+
+.product-breadcrumb span {
+
+    margin-left: 8px;
+}
+
+
+/* =========================================================
+   MAIN PRODUCT LAYOUT
+========================================================= */
+
+.product-page {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 20px 40px 100px;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    gap: 70px;
+}
+
+
+/* =========================================================
+   PRODUCT VISUALS
+========================================================= */
+
+.product-visual-area {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.product-photo-main,
+.product-photo-secondary {
+
+    height: 430px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #181818;
+}
+
+
+.product-photo-main img,
+.product-photo-secondary img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+
+.product-photo-main:hover img,
+.product-photo-secondary:hover img {
+
+    transform: scale(1.04);
+}
+
+
+.photo-label {
+
+    position: absolute;
+
+    left: 20px;
+
+    bottom: 20px;
+
+    padding: 7px 12px;
+
+    background: rgba(0,0,0,0.65);
+
+    color: #aaa;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   3D VIEWER
+========================================================= */
+
+.product-3d-section {
+
+    grid-column: 1 / -1;
+
+    margin-top: 10px;
+}
+
+
+.viewer-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+.viewer-header h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    margin-top: 5px;
+}
+
+
+.viewer-status {
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+
+.model-container {
+
+    position: relative;
+
+    height: 620px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #383838,
+            #101010 70%
+        );
+
+    border: 1px solid #282828;
+}
+
+
+model-viewer {
+
+    width: 100%;
+
+    height: 100%;
+
+    background: transparent;
+}
+
+
+.model-ar-button {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 35px;
+
+    transform: translateX(-50%);
+
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: black;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.4);
+
+    transition: 0.3s;
+}
+
+
+.model-ar-button:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-3px);
+
+}
+
+
+.viewer-hint {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 20px;
+
+    padding: 8px 12px;
+
+    background: rgba(0,0,0,0.5);
+
+    color: #777;
+
+    font-size: 9px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.product-information {
+
+    padding-top: 30px;
+
+    position: sticky;
+
+    top: 30px;
+
+    align-self: start;
+}
+
+
+.product-information h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 5vw, 70px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    margin: 8px 0 15px;
+}
+
+
+.product-tagline {
+
+    color: #777;
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    margin-bottom: 25px;
+}
+
+
+.product-price {
+
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+
+.product-divider {
+
+    height: 1px;
+
+    background: #282828;
+
+    margin: 30px 0;
+}
+
+
+.product-description p {
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    max-width: 450px;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS
+========================================================= */
+
+.specifications {
+
+    margin-top: 35px;
+
+    border-top: 1px solid #282828;
+}
+
+
+.spec-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #222;
+
+    font-size: 11px;
+}
+
+
+.spec-row span {
+
+    color: #666;
+}
+
+
+.spec-row strong {
+
+    font-weight: 500;
+
+    color: #ccc;
+}
+
+
+/* =========================================================
+   AR CARD
+========================================================= */
+
+.ar-product-card {
+
+    margin-top: 35px;
+
+    padding: 25px;
+
+    display: flex;
+
+    gap: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #242424,
+            #151515
+        );
+
+    border: 1px solid #303030;
+}
+
+
+.ar-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #555;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+.ar-product-content h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 23px;
+
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+
+.ar-product-content p {
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+.ar-main-button {
+
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background: white;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    border-radius: 25px;
+
+    transition: 0.3s;
+}
+
+
+.ar-main-button:hover {
+
+    background: #ddd;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   QR
+========================================================= */
+
+.qr-section {
+
+    margin-top: 25px;
+
+    padding: 25px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    border-top: 1px solid #282828;
+}
+
+
+.qr-text {
+
+    flex: 1;
+}
+
+
+.qr-text h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    margin: 5px 0 10px;
+}
+
+
+.qr-text p:last-child {
+
+    color: #777;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+.qr-code {
+
+    width: 150px;
+
+    height: 150px;
+
+    padding: 10px;
+
+    background: white;
+
+    flex-shrink: 0;
+}
+
+
+.qr-code img {
+
+    width: 100%;
+
+    height: 100%;
+}
+
+
+/* =========================================================
+   CART BUTTON
+========================================================= */
+
+.add-cart-button {
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    background: white;
+
+    color: black;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    transition: 0.3s;
+}
+
+
+.add-cart-button:hover {
+
+    background: #ddd;
+}
+
+
+.add-cart-button span {
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   AR EXPLANATION
+========================================================= */
+
+.product-ar-explanation {
+
+    padding: 100px max(40px, 10%);
+
+    background: #151515;
+
+    border-top: 1px solid #282828;
+
+    border-bottom: 1px solid #282828;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+.product-ar-explanation h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+.product-ar-explanation h2 span {
+
+    color: #777;
+}
+
+
+.product-ar-explanation > div:last-child p {
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+
+    max-width: 500px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .product-page {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .product-information {
+
+        position: static;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+
+    .product-breadcrumb {
+
+        padding: 20px;
+    }
+
+
+    .product-page {
+
+        padding: 10px 15px 70px;
+    }
+
+
+    .product-visual-area {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-photo-main,
+    .product-photo-secondary {
+
+        height: 360px;
+    }
+
+
+    .product-3d-section {
+
+        margin-top: 10px;
+    }
+
+
+    .viewer-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .viewer-header h2 {
+
+        font-size: 28px;
+    }
+
+
+    .model-container {
+
+        height: 500px;
+    }
+
+
+    .viewer-hint {
+
+        display: none;
+    }
+
+
+    .product-information {
+
+        padding-top: 10px;
+    }
+
+
+    .product-information h1 {
+
+        font-size: 46px;
+    }
+
+
+    .ar-product-card {
+
+        padding: 20px;
+
+        flex-direction: column;
+    }
+
+
+    .qr-section {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .product-ar-explanation {
+
+        padding: 70px 25px;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+}
+
+```css
+/* =====================================================
+   3D WATCH MODELS - HOME COLLECTION
+===================================================== */
+
+.collection-model {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    background: transparent;
+
+    --poster-color: transparent;
+
+}
+
+
+/* Remove the default model-viewer
+   loading background */
+
+.collection-model::part(default-progress-bar) {
+
+    display: none;
+
+}
+
+
+/* Keep model inside collection card */
+
+.watch-image {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* Make the 3D model slightly smaller
+   inside the card */
+
+.collection-model {
+
+    transform: scale(0.85);
+
+    transform-origin: center center;
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .collection-model {
+
+        transform: scale(0.78);
+
+    }
+
+}
+```
